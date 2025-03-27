@@ -23,6 +23,9 @@ struct HomeView: View {
     @State private var isProcessing = false
     @State private var isShowingInstalledApps = false
     @State private var isShowingPairingFilePicker = false
+    @State private var pairingFileExists: Bool = false
+    @State private var showPairingFileMessage = false
+    @State private var pairingFileIsValid = false
 
     var body: some View {
         ZStack {
@@ -35,38 +38,67 @@ struct HomeView: View {
                         .font(.system(.largeTitle, design: .rounded))
                         .fontWeight(.bold)
                     
-                    Text("Click enable jit to get started")
+                    Text("Click enable JIT to get started")
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                 }
                 .padding(.top, 40)
                 
+                // Main action button - changes based on whether we have a pairing file
                 Button(action: {
-                    if !FileManager.default.fileExists(atPath: URL.documentsDirectory.appendingPathComponent("pairingFile.plist").path) {
-                        isShowingPairingFilePicker = true
-                    } else {
+                    if pairingFileExists {
+                        // Got a pairing file, show apps
                         isShowingInstalledApps = true
+                    } else {
+                        // No pairing file yet, let's get one
+                        isShowingPairingFilePicker = true
                     }
                 }) {
-                    Label("Enable JIT", systemImage: "list.bullet")
-                        .font(.system(.title3, design: .rounded))
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(16)
-                        .shadow(color: Color.blue.opacity(0.3), radius: 8, x: 0, y: 4)
+                    HStack {
+                        Image(systemName: pairingFileExists ? "bolt.fill" : "doc.badge.plus")
+                            .font(.system(size: 20))
+                        Text(pairingFileExists ? "Enable JIT" : "Import Pairing File")
+                            .font(.system(.title3, design: .rounded))
+                            .fontWeight(.semibold)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+                    .shadow(color: Color.blue.opacity(0.3), radius: 8, x: 0, y: 4)
                 }
                 .padding(.horizontal, 20)
+                
+                // Status message area - keeps layout consistent
+                ZStack {
+                    if showPairingFileMessage && pairingFileIsValid {
+                        Text("✓ Pairing file successfully imported")
+                            .font(.system(.callout, design: .rounded))
+                            .foregroundColor(.green)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 12)
+                            .background(Color.green.opacity(0.1))
+                            .cornerRadius(8)
+                            .transition(.opacity)
+                    }
+                    
+                    // Invisible text to reserve space - no layout jumps
+                    Text(" ").opacity(0)
+                }
+                .frame(height: 30)
                 
                 Spacer()
             }
             .padding()
         }
+        .onAppear {
+            checkPairingFileExists()
+        }
         .onReceive(timer) { _ in
             refreshBackground()
+            checkPairingFileExists()
         }
         .fileImporter(isPresented: $isShowingPairingFilePicker, allowedContentTypes: [UTType(filenameExtension: "mobiledevicepairing", conformingTo: .data)!, .propertyList]) {result in
             switch result {
@@ -83,8 +115,30 @@ struct HomeView: View {
                         
                         try fileManager.copyItem(at: url, to: URL.documentsDirectory.appendingPathComponent("pairingFile.plist"))
                         print("File copied successfully!")
+                        
+                        // Show success message first
+                        DispatchQueue.main.async {
+                            // Set pairing file exists and show success message
+                            pairingFileExists = true
+                            pairingFileIsValid = true
+                            
+                            // Show success message with animation
+                            withAnimation {
+                                showPairingFileMessage = true
+                            }
+                            
+                            // Schedule hiding of message
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation {
+                                    showPairingFileMessage = false
+                                }
+                            }
+                        }
+                        
+                        // Start heartbeat and then sleep
                         startHeartbeatInBackground()
                         
+                        // Moving this after the UI updates
                         Thread.sleep(forTimeInterval: 5)
                     } catch {
                         print("Error copying file: \(error)")
@@ -96,8 +150,8 @@ struct HomeView: View {
                 if accessing {
                     url.stopAccessingSecurityScopedResource()
                 }
-            case .failure(_):
-                print("Failed")
+            case .failure(let error):
+                print("Failed to import file: \(error)")
             }
         }
         .sheet(isPresented: $isShowingInstalledApps) {
@@ -108,6 +162,10 @@ struct HomeView: View {
                 startJITInBackground(with: selectedBundle)
             }
         }
+    }
+    
+    private func checkPairingFileExists() {
+        pairingFileExists = FileManager.default.fileExists(atPath: URL.documentsDirectory.appendingPathComponent("pairingFile.plist").path)
     }
     
     private func refreshBackground() {
