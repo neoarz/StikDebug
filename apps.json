@@ -8,8 +8,8 @@
   ],
   "apps": [
     {
-      "name": "SrikDebug",
-      "bundleIdentifier": "com.utmapp.UTM-SE",
+      "name": "StikDebug",
+      "bundleIdentifier": "com.stik.sj",
       "marketplaceID": "1564628856",
       "developerName": "Stephen B",
       "subtitle": "On-device debugger",
