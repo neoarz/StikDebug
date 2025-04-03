@@ -1,0 +1,136 @@
+{
+  "name": "UTM Repository (AltStore PAL)",
+  "subtitle": "Virtual machines for iOS",
+  "website": "https://getutm.app",
+  "tintColor": "#1a2cc2",
+  "featuredApps": [
+      "com.utmapp.UTM-SE"
+  ],
+  "apps": [
+    {
+      "name": "UTM SE",
+      "bundleIdentifier": "com.utmapp.UTM-SE",
+      "marketplaceID": "1564628856",
+      "developerName": "osy",
+      "subtitle": "Retro PC emulator",
+      "localizedDescription": "UTM SE is a PC emulator that allows you to run classic software and old-school games.\n\n• Supports both VGA mode for graphics and terminal mode for text-only operating systems\n• Emulates x86, ARM, PPC, and RISC-V architectures\n• Run pre-built machines or create your own configuration from scratch\n• Built from QEMU, a powerful and widely used emulator",
+      "category": "entertainment",
+      "iconURL": "https://pal.getutm.app/icon.png",
+      "tintColor": "#1a2cc2",
+      "minOSVersion": "14.0",
+      "appPermissions": {
+        "privacy": [
+          {
+            "name": "LocalNetwork",
+            "usageDescription": "The virtual machine may access the local network. UTM also uses the local network to communicate with AltServer."
+          },
+          {
+            "name": "Microphone",
+            "usageDescription": "Permission is required for any virtual machine to record from the microphone."
+          }
+        ]
+      },
+      "screenshots": {
+        "iphone": [
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_0.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_1.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_2.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_3.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_4.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_5.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_6.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_7.png"
+          },
+          {
+            "width": 1290,
+            "height": 2796,
+            "imageURL": "https://pal.getutm.app/iphone_screen_8.png"
+          }
+        ],
+        "ipad": [
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_0.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_1.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_2.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_3.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_4.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_5.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_6.png"
+          },
+          {
+            "width": 2732,
+            "height": 2048,
+            "imageURL": "https://pal.getutm.app/ipad_screen_7.png"
+          }
+        ]
+      },
+      "versions": [
+        {
+          "version": "4.6.2",
+          "date": "2024-12-01",
+          "localizedDescription": "* QEMU v9.1.2 The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\n* Fixed booting of PPC and i386 VMs\n* Fixed a crash when the main bundle executable is not the same as the currently running executable\n* Fixed a crash on iOS 18 due to namespace collision with internal names\n* Fixed auto-zoom to fill screen not properly working when Display Zoom is used (#6736)",
+          "downloadURL": "https://pal.getutm.app/adp",
+          "size": 182240665,
+          "buildVersion": "104"
+        }
+      ]
+    }
+  ]
+}
