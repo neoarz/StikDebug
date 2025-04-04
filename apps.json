@@ -1,6 +1,6 @@
 {
-  "beta": true,
   "name": "StikDebug",
+  "beta": true,
   "subtitle": "An on-device debugger designed specifically for self-installed apps",
   "website": "https://stikdebug.xyz",
   "tintColor": "#293B45",
