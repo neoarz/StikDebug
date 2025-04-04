@@ -1,6 +1,6 @@
 {
   "beta": true,
-  "name": "StikDebug (AltStore PAL)",
+  "name": "StikDebug",
   "subtitle": "An on-device debugger designed specifically for self-installed apps",
   "website": "https://stikdebug.xyz",
   "tintColor": "#293B45",
