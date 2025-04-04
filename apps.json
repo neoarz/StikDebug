@@ -1,4 +1,5 @@
 {
+  "beta": false,
   "name": "StikDebug (AltStore PAL)",
   "subtitle": "An on-device debugger designed specifically for self-installed apps",
   "website": "https://stikdebug.xyz",
