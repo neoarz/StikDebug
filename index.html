@@ -57,17 +57,20 @@
     section {
       margin-bottom: 3rem;
     }
-    h2, h3 {
-      color: var(--accent-color);
-    }
-    h2 {
+    /* Style the summary elements to mimic the original h2/h3 styling */
+    details > summary {
       font-size: 1.75rem;
+      color: var(--accent-color);
       border-bottom: 2px solid var(--accent-color);
       padding-bottom: 0.5rem;
+      cursor: pointer;
+      outline: none;
+      list-style: none;
     }
-    h3 {
-      margin-top: 1.5rem;
+    details details > summary {
       font-size: 1.5rem;
+      border: none;
+      padding-bottom: 0;
     }
     p, li {
       font-size: 1rem;
@@ -116,98 +119,117 @@
   <main>
     <!-- Overview Section -->
     <section id="overview">
-      <h2>Project Overview</h2>
-      <p>
-        StikDebug is a cutting-edge debugging and just-in-time tool built for iOS devices. Combining high-performance technology with an intuitive, SwiftUI-inspired interface, StikDebug streamlines installation, usage, and troubleshooting.
-      </p>
+      <details>
+        <summary>Project Overview</summary>
+        <p>
+          StikDebug is a cutting-edge debugging and just-in-time tool built for iOS devices. Combining high-performance technology with an intuitive, SwiftUI-inspired interface, StikDebug streamlines installation, usage, and troubleshooting.
+        </p>
+      </details>
     </section>
 
     <!-- Features Section -->
     <section id="features">
-      <h2>Features</h2>
-      <ul>
-        <li>Seamless installation via AltStore PAL</li>
-        <li>Modern, dark mode user interface</li>
-        <li>Robust pairing and debugging features</li>
-        <li>Detailed log viewing with Open Console</li>
-        <li>Integrated support for shortcuts and automated actions</li>
-      </ul>
+      <details>
+        <summary>Features</summary>
+        <ul>
+          <li>Seamless installation via AltStore PAL</li>
+          <li>Modern, dark mode user interface</li>
+          <li>Robust pairing and debugging features</li>
+          <li>Detailed log viewing with Open Console</li>
+          <li>Integrated support for shortcuts and automated actions</li>
+        </ul>
+      </details>
     </section>
     
     <!-- Instructions Section -->
     <section id="instructions">
-      <h2>Instructions</h2>
-      
-      <!-- Installation Instructions -->
-      <h3>How to Install StikDebug (with AltStore PAL)</h3>
-      <ol>
-        <li>
-          Get AltStore PAL installed: go to 
-          <a href="https://altstore.io" target="_blank">altstore.io</a> and follow the instructions.
-        </li>
-        <li>
-          Add the StikDebug source to AltStore PAL: 
-          <a href="https://stikdebug.xyz/apps.json" target="_blank">https://stikdebug.xyz/apps.json</a>.
-        </li>
-        <li>Install it via AltStore PAL – and now you're done!</li>
-      </ol>
+      <details>
+        <summary>Instructions</summary>
+        
+        <!-- Installation Instructions -->
+        <details>
+          <summary>How to Install StikDebug (with AltStore PAL)</summary>
+          <ol>
+            <li>
+              Get AltStore PAL installed: go to 
+              <a href="https://altstore.io" target="_blank">altstore.io</a> and follow the instructions.
+            </li>
+            <li>
+              Add the StikDebug source to AltStore PAL: 
+              <a href="https://stikdebug.xyz/apps.json" target="_blank">https://stikdebug.xyz/apps.json</a>.
+            </li>
+            <li>Install it via AltStore PAL – and now you're done!</li>
+          </ol>
+        </details>
 
-      <!-- Pairing File Instructions -->
-      <h3>Pairing File Instructions</h3>
-      <ol>
-        <li>
-          Make a pairing file and follow the guide at 
-          <a href="https://sidestore.io/#get-started" target="_blank">SideStore.io</a>.
-        </li>
-        <li>
-          After creating the pairing file, zip it up and share it with your device. We recommend emailing the file to yourself or uploading it to a cloud service like Airdrop or Proton Drive.
-        </li>
-      </ol>
+        <!-- Pairing File Instructions -->
+        <details>
+          <summary>Pairing File Instructions</summary>
+          <ol>
+            <li>
+              Make a pairing file and follow the guide at 
+              <a href="https://docs.sidestore.io/docs/getting-started/pairing-file/" target="_blank">SideStore Pairing File Guide</a>.
+            </li>
+            <li>
+              After creating the pairing file, zip it up and share it with your device. We recommend emailing the file to yourself or uploading it to a cloud service like Airdrop or Proton Drive.
+            </li>
+          </ol>
+        </details>
 
-      <!-- Usage Instructions -->
-      <h3>How to Use StikDebug</h3>
-      <ol>
-        <li>Open the app, read the popup, and click "Continue" to enable the loopback VPN.</li>
-        <li>Connect to an app process by clicking the button named "Connect" and selecting an app from the list.</li>
-      </ol>
+        <!-- Usage Instructions -->
+        <details>
+          <summary>How to Use StikDebug</summary>
+          <ol>
+            <li>Open the app, read the popup, and click "Continue" to enable the loopback VPN.</li>
+            <li>Connect to an app process by clicking the button named "Connect" and selecting an app from the list.</li>
+          </ol>
+        </details>
 
-      <!-- Viewing Logs -->
-      <h3>How to View the Logs</h3>
-      <p>Click the <strong>Open Console</strong> button to view the logs.</p>
+        <!-- Viewing Logs -->
+        <details>
+          <summary>How to View the Logs</summary>
+          <p>Click the <strong>Open Console</strong> button to view the logs.</p>
+        </details>
 
-      <!-- Common Issues -->
-      <h3>Common Issues</h3>
-      <ol>
-        <li>
-          <strong>Pairing File Issue -9</strong><br>
-          <em>Info:</em> This may occur if your pairing file was tampered with or if you created a brand new one.<br>
-          <em>Fix:</em> Make a new pairing file with JitterBugPair.
-        </li>
-      </ol>
+        <!-- Common Issues -->
+        <details>
+          <summary>Common Issues</summary>
+          <ol>
+            <li>
+              <strong>Pairing File Issue -9</strong><br>
+              <em>Info:</em> This may occur if your pairing file was tampered with or if you created a brand new one.<br>
+              <em>Fix:</em> Make a new pairing file with JitterBugPair.
+            </li>
+          </ol>
+        </details>
 
-      <!-- FAQ -->
-      <h3>FAQ</h3>
-      <ul>
-        <li>
-          <strong>Do I need to be connected to WiFi?</strong><br>
-          WiFi or Airplane mode is required.
-        </li>
-        <li>
-          <strong>Is this open source?</strong><br>
-          Yes – check out the source code on <a href="#" target="_blank">GitHub</a>.
-        </li>
-        <li>
-          <strong>What iOS versions does this support?</strong><br>
-          iOS 17.4 – Latest (latest version).
-        </li>
-        <li>
-          <strong>Will anything below 17.4 work?</strong><br>
-          No, update your iOS version.
-        </li>
-      <ul> 
-      <!-- iDevice Error Codes -->
-      <h3>iDevice Error Codes</h3>
-      <pre>
+        <!-- FAQ -->
+        <details>
+          <summary>FAQ</summary>
+          <ul>
+            <li>
+              <strong>Do I need to be connected to WiFi?</strong><br>
+              WiFi or Airplane mode is required.
+            </li>
+            <li>
+              <strong>Is this open source?</strong><br>
+              Yes – check out the source code on <a href="#" target="_blank">GitHub</a>.
+            </li>
+            <li>
+              <strong>What iOS versions does this support?</strong><br>
+              iOS 17.4 – Latest (latest version).
+            </li>
+            <li>
+              <strong>Will anything below 17.4 work?</strong><br>
+              No, update your iOS version.
+            </li>
+          </ul>
+        </details>
+
+        <!-- iDevice Error Codes -->
+        <details>
+          <summary>iDevice Error Codes</summary>
+          <pre>
 Socket (-1)
 Ssl (-2)
 SslSetup (-3)
@@ -252,7 +274,9 @@ ServiceNotFound (-997)
 BufferTooSmall (-998)
 InvalidString (-999)
 InvalidArg (-1000)
-      </pre>
+          </pre>
+        </details>
+      </details>
     </section>
   </main>
   <footer>
