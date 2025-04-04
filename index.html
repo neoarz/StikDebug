@@ -1,9 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Hello World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StikDebug</title>
+  <style>
+    :root {
+      --bg-color: #1d1d1d;
+      --header-footer-bg: #222;
+      --text-color: #f0f0f0;
+      --accent-color: #0a84ff;
+      --border-color: #333;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header, footer {
+      background-color: var(--header-footer-bg);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.75rem;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2, h3 {
+      color: var(--accent-color);
+    }
+    h2 {
+      font-size: 1.75rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+    }
+    p, li {
+      font-size: 1rem;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+    a.button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    a.button:hover {
+      background-color: #0060c0;
+    }
+    pre {
+      background-color: #2a2a2a;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    footer p {
+      margin: 0;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
+  <header>
+    <h1>StikDebug</h1>
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#instructions">Instructions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Overview Section -->
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>
+        StikDebug is a cutting-edge debugging and just-in-time tool built for iOS devices. Combining high-performance technology with an intuitive, SwiftUI-inspired interface, StikDebug streamlines installation, usage, and troubleshooting.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Seamless installation via AltStore PAL</li>
+        <li>Modern, dark mode user interface</li>
+        <li>Robust pairing and debugging features</li>
+        <li>Detailed log viewing with Open Console</li>
+        <li>Integrated support for shortcuts and automated actions</li>
+      </ul>
+    </section>
+    
+    <!-- Instructions Section -->
+    <section id="instructions">
+      <h2>Instructions</h2>
+      
+      <!-- Installation Instructions -->
+      <h3>How to Install StikDebug (with AltStore PAL)</h3>
+      <ol>
+        <li>
+          Get AltStore PAL installed: go to 
+          <a href="https://altstore.io" target="_blank">altstore.io</a> and follow the instructions.
+        </li>
+        <li>
+          Add the StikDebug source to AltStore PAL: 
+          <a href="https://stikdebug.xyz/apps.json" target="_blank">https://stikdebug.xyz/apps.json</a>.
+        </li>
+        <li>Install it via AltStore PAL – and now you're done!</li>
+      </ol>
+
+      <!-- Pairing File Instructions -->
+      <h3>Pairing File Instructions</h3>
+      <ol>
+        <li>
+          Make a pairing file and follow the guide at 
+          <a href="https://sidestore.io/#get-started" target="_blank">SideStore.io</a>.
+        </li>
+        <li>
+          After creating the pairing file, zip it up and share it with your device. We recommend emailing the file to yourself or uploading it to a cloud service like Airdrop or Proton Drive.
+        </li>
+      </ol>
+
+      <!-- Usage Instructions -->
+      <h3>How to Use StikDebug</h3>
+      <ol>
+        <li>Open the app, read the popup, and click "Continue" to enable the loopback VPN.</li>
+        <li>Connect to an app process by clicking the button named "Connect" and selecting an app from the list.</li>
+      </ol>
+
+      <!-- Viewing Logs -->
+      <h3>How to View the Logs</h3>
+      <p>Click the <strong>Open Console</strong> button to view the logs.</p>
+
+      <!-- Common Issues -->
+      <h3>Common Issues</h3>
+      <ol>
+        <li>
+          <strong>Pairing File Issue -9</strong><br>
+          <em>Info:</em> This may occur if your pairing file was tampered with or if you created a brand new one.<br>
+          <em>Fix:</em> Make a new pairing file with JitterBugPair.
+        </li>
+      </ol>
+
+      <!-- FAQ -->
+      <h3>FAQ</h3>
+      <ul>
+        <li>
+          <strong>Do I need to be connected to WiFi?</strong><br>
+          WiFi or Airplane mode is required.
+        </li>
+        <li>
+          <strong>Is this open source?</strong><br>
+          Yes – check out the source code on <a href="#" target="_blank">GitHub</a>.
+        </li>
+        <li>
+          <strong>What iOS versions does this support?</strong><br>
+          iOS 17.4 – Latest (latest version).
+        </li>
+        <li>
+          <strong>Will anything below 17.4 work?</strong><br>
+          No, update your iOS version.
+        </li>
+      <ul> 
+      <!-- iDevice Error Codes -->
+      <h3>iDevice Error Codes</h3>
+      <pre>
+        Socket (-1)
+        Ssl (-2)
+        SslSetup (-3)
+        Plist (-4)
+        Utf8 (-5)
+        UnexpectedResponse (-6)
+        GetProhibited (-7)
+        SessionInactive (-8)
+        InvalidHostID (-9)
+        NoEstablishedConnection (-10)
+        HeartbeatSleepyTime (-11)
+        HeartbeatTimeout (-12)
+        NotFound (-13)
+        CdtunnelPacketTooShort (-14)
+        CdtunnelPacketInvalidMagic (-15)
+        PacketSizeMismatch (-16)
+        Json (-17)
+        DeviceNotFound (-18)
+        DeviceLocked (-19)
+        UsbConnectionRefused (-20)
+        UsbBadCommand (-21)
+        UsbBadDevice (-22)
+        UsbBadVersion (-23)
+        BadBuildManifest (-24)
+        ImageNotMounted (-25)
+        Reqwest (-26)
+        InternalError (-27)
+        Xpc (-28)
+        NsKeyedArchiveError (-29)
+        UnknownAuxValueType (-30)
+        UnknownChannel (-31)
+        AddrParseError (-32)
+        DisableMemoryLimitFailed (-33)
+        NotEnoughBytes (-34)
+        Utf8Error (-35)
+        InvalidArgument (-36)
+        UnknownErrorType (-37)
+        
+        FFI-Specific Bindings:
+        AdapterIOFailed (-996)
+        ServiceNotFound (-997)
+        BufferTooSmall (-998)
+        InvalidString (-999)
+        InvalidArg (-1000)
+      </pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 StikDebug. All rights reserved.</p>
+  </footer>
 </body>
 </html>
