@@ -44,12 +44,12 @@
       },
       "versions": [
         {
-          "version": "1.3.2",
-          "date": "2025-04-17",
-          "localizedDescription": "Inital release on AltStore PAL.",
+          "version": "1.3.3",
+          "date": "2025-04-18",
+          "localizedDescription": "Bug Fixes",
           "downloadURL": "https://stikdebug.xyz/adp",
           "size": 5211211,
-          "buildVersion": "4"
+          "buildVersion": "1"
         }
       ]
     }
