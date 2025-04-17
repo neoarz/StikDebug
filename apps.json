@@ -1,6 +1,5 @@
 {
   "name": "StikDebug",
-  "beta": true,
   "subtitle": "An on-device debugger designed specifically for self-installed apps",
   "website": "https://stikdebug.xyz",
   "tintColor": "#293B45",
@@ -45,7 +44,7 @@
       },
       "versions": [
         {
-          "version": "1.2",
+          "version": "1.3.1",
           "date": "2025-04-02",
           "localizedDescription": "Inital release on AltStore PAL.",
           "downloadURL": "https://stikdebug.xyz/adp",
