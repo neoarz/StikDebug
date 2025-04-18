@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StikDebug - FAQ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="faq">
+  <!-- Glass Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo">
+        <img src="../assets/icon.png" alt="StikDebug Logo">
+      </div>
+    </div>
+    
+    <div class="navbar-divider hide-on-mobile"></div>
+    
+    <div class="navbar-center hide-on-mobile">
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="developers.html">Developers</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+    
+    <div class="navbar-right">
+      <a href="https://discord.gg/ZnNcrRT3M8" class="discord-button" target="_blank">
+        <img src="../assets/discord-icon.svg" alt="Discord">
+        Join Discord
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="menu-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="download.html">Download</a>
+      <a href="developers.html">Developers</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- FAQ Hero Banner -->
+    <section class="faq-hero">
+      <h1>Frequently Asked Questions</h1>
+      <p>Find answers to the most common questions about StikDebug</p>
+    </section>
+    
+    <!-- Quick Links Navigation -->
+    <section class="faq-navigation">
+      <div class="faq-nav-links">
+        <a href="#general" class="faq-nav-item">
+          <div class="faq-nav-icon general"></div>
+          <span>General</span>
+        </a>
+        <a href="#troubleshooting" class="faq-nav-item">
+          <div class="faq-nav-icon troubleshooting"></div>
+          <span>Troubleshooting</span>
+        </a>
+        <a href="#error-codes" class="faq-nav-item">
+          <div class="faq-nav-icon error-codes"></div>
+          <span>Error Codes</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- General FAQ Section -->
+    <section id="general" class="faq-section">
+      <h2>General Questions</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Does this work with LiveContainer?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Yes, it functions in the same manner.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Do I need to be connected to Wi-Fi?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>The first launch requires Wi-Fi to mount the ddi. After this you can use Wi-Fi or Airplane mode.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Can this be used with a certificate?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Yes, it has to be used with a developer certificate. Distribution and enterprise certificates will <strong>NOT</strong> work.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Is this open source?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Yes, the source code is available on <a href="https://github.com/0-Blu/StikJIT/" target="_blank">GitHub</a>.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>What iOS versions are supported?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Supported versions range from iOS 17.4 to iOS 18.5 Developer Beta 2 (latest version).</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Will devices with versions below iOS 17.4 work?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>No, an update to iOS 17.4 or higher is required.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Does iOS 18.4 beta 1 work?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>No, Apple broke JIT in this version. You should update.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Will StikDebug be available on the normal App Store?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Maybe, it is unclear if Apple will allow it.</p>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Is WireGuard still an option, or is StosVPN required?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>StosVPN is required for StikJIT to work properly. It is not needed for StikDebug because the VPN is built in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting Section -->
+    <section id="troubleshooting" class="faq-section">
+      <h2>Troubleshooting</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Pairing file not working</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <ul>
+              <li>Make sure you're using the correct file with the <code>.mobiledevicepairing</code> extension</li>
+              <li>Ensure your device was connected and unlocked when generating the pairing file</li>
+              <li>Try generating a new pairing file with a fresh connection</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>App not launching</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <ul>
+              <li>Restart your device</li>
+              <li>Reinstall the app through AltStore PAL</li>
+              <li>Ensure your device meets the minimum requirements (iOS 17.4+)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header">
+            <h3>Need more help?</h3>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-accordion-content">
+            <p>Join our <a href="https://discord.gg/ZnNcrRT3M8" target="_blank">Discord server</a> for community support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Error Codes Section -->
+    <section id="error-codes" class="faq-section">
+      <h2>Error Codes Reference</h2>
+      
+      <div class="error-code-container">
+        <div class="error-code-search">
+          <input type="text" id="errorCodeSearch" placeholder="Search error codes..." class="error-search-input">
+        </div>
+        
+        <div class="error-code-list">
+          <div class="error-code-column">
+            <div class="error-code-item">
+              <code>Socket (-1)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Ssl (-2)</code>
+            </div>
+            <div class="error-code-item">
+              <code>SslSetup (-3)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Plist (-4)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Utf8 (-5)</code>
+            </div>
+            <div class="error-code-item">
+              <code>UnexpectedResponse (-6)</code>
+            </div>
+            <div class="error-code-item">
+              <code>GetProhibited (-7)</code>
+            </div>
+            <div class="error-code-item">
+              <code>SessionInactive (-8)</code>
+            </div>
+            <div class="error-code-item">
+              <code>InvalidHostID (-9)</code>
+            </div>
+            <div class="error-code-item">
+              <code>NoEstablishedConnection (-10)</code>
+            </div>
+          </div>
+          
+          <div class="error-code-column">
+            <div class="error-code-item">
+              <code>HeartbeatSleepyTime (-11)</code>
+            </div>
+            <div class="error-code-item">
+              <code>HeartbeatTimeout (-12)</code>
+            </div>
+            <div class="error-code-item">
+              <code>NotFound (-13)</code>
+            </div>
+            <div class="error-code-item">
+              <code>CdtunnelPacketTooShort (-14)</code>
+            </div>
+            <div class="error-code-item">
+              <code>CdtunnelPacketInvalidMagic (-15)</code>
+            </div>
+            <div class="error-code-item">
+              <code>PacketSizeMismatch (-16)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Json (-17)</code>
+            </div>
+            <div class="error-code-item">
+              <code>DeviceNotFound (-18)</code>
+            </div>
+            <div class="error-code-item">
+              <code>DeviceLocked (-19)</code>
+            </div>
+            <div class="error-code-item">
+              <code>UsbConnectionRefused (-20)</code>
+            </div>
+          </div>
+          
+          <div class="error-code-column">
+            <div class="error-code-item">
+              <code>UsbBadCommand (-21)</code>
+            </div>
+            <div class="error-code-item">
+              <code>UsbBadDevice (-22)</code>
+            </div>
+            <div class="error-code-item">
+              <code>UsbBadVersion (-23)</code>
+            </div>
+            <div class="error-code-item">
+              <code>BadBuildManifest (-24)</code>
+            </div>
+            <div class="error-code-item">
+              <code>ImageNotMounted (-25)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Reqwest (-26)</code>
+            </div>
+            <div class="error-code-item">
+              <code>InternalError (-27)</code>
+            </div>
+            <div class="error-code-item">
+              <code>Xpc (-28)</code>
+            </div>
+            <div class="error-code-item">
+              <code>NsKeyedArchiveError (-29)</code>
+            </div>
+            <div class="error-code-item">
+              <code>UnknownAuxValueType (-30)</code>
+            </div>
+          </div>
+        </div>
+        
+        <div class="error-code-footer">
+          <h4>FFI-Specific Bindings:</h4>
+          <div class="error-ffi-codes">
+            <code>AdapterIOFailed (-996)</code>
+            <code>ServiceNotFound (-997)</code>
+            <code>BufferTooSmall (-998)</code>
+            <code>InvalidString (-999)</code>
+            <code>InvalidArg (-1000)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support CTA Section -->
+    <section class="faq-cta">
+      <h2>Still Have Questions?</h2>
+      <p>Join our community for direct support from developers and other users.</p>
+      <a href="https://discord.gg/ZnNcrRT3M8" class="button primary-button" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.39-.444.766-.608 1.11a15.66 15.66 0 0 0-4.745 0 9.394 9.394 0 0 0-.617-1.11.08.08 0 0 0-.079-.036 18.913 18.913 0 0 0-4.89 1.49.073.073 0 0 0-.033.027C.533 8.268-.32 11.93.099 15.538a.082.082 0 0 0 .031.056 19.188 19.188 0 0 0 5.793 2.926.08.08 0 0 0 .086-.028c.37-.504.7-1.036.982-1.595a.076.076 0 0 0-.041-.106 12.63 12.63 0 0 1-1.807-.86.077.077 0 0 1-.008-.127c.114-.086.228-.178.336-.27a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.109.092.222.184.336.27a.077.077 0 0 1-.006.127 11.93 11.93 0 0 1-1.809.86.077.077 0 0 0-.041.106c.29.559.62 1.09.981 1.595a.08.08 0 0 0 .086.028 19.128 19.128 0 0 0 5.795-2.926.084.084 0 0 0 .033-.056c.5-4.15-.837-7.42-3.548-10.476a.066.066 0 0 0-.034-.027ZM8.02 13.33c-1.182 0-2.156-1.085-2.156-2.418 0-1.333.956-2.419 2.156-2.419 1.208 0 2.173 1.096 2.156 2.419 0 1.333-.956 2.418-2.156 2.418Zm7.968 0c-1.183 0-2.157-1.085-2.157-2.418 0-1.333.955-2.419 2.157-2.419 1.207 0 2.173 1.096 2.156 2.419 0 1.333-.956 2.418-2.156 2.418Z" />
+        </svg>
+        Join Our Discord
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year">2025</span> StikDebug. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html> 

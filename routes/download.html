@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StikDebug - Download</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="download">
+  <!-- Glass Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo">
+        <img src="../assets/icon.png" alt="StikDebug Logo">
+      </div>
+    </div>
+    
+    <div class="navbar-divider hide-on-mobile"></div>
+    
+    <div class="navbar-center hide-on-mobile">
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="developers.html">Developers</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+    
+    <div class="navbar-right">
+      <a href="https://discord.gg/ZnNcrRT3M8" class="discord-button" target="_blank">
+        <img src="../assets/discord-icon.svg" alt="Discord">
+        Join Discord
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="menu-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="download.html">Download</a>
+      <a href="developers.html">Developers</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Download Section -->
+    <section id="download">
+      <details open>
+        <summary>Download & Pairing Instructions</summary>
+        
+        <div class="download-intro">
+          <p>To use StikDebug on your iOS device, you'll need to complete two steps:</p>
+        </div>
+        
+        <div class="installation-grid">
+          <div class="install-card">
+            <div class="card-number">1</div>
+            <div class="card-content">
+              <h3>First, install StikDebug</h3>
+              <ol>
+                <li>Get AltStore PAL installed from <a href="https://altstore.io" target="_blank">altstore.io</a></li>
+                <li>Add the StikDebug source: <a href="#" onclick="navigator.clipboard.writeText('https://stikdebug.xyz/apps.json'); showToast('Source URL copied!'); return false;">Copy Source Link</a></li>
+                <li>Install StikDebug via AltStore PAL</li>
+              </ol>
+              <a href="altstore://source?url=https://stikdebug.xyz/apps.json" class="button">Add to AltStore</a>
+            </div>
+          </div>
+
+          <div class="install-card">
+            <div class="card-number">2</div>
+            <div class="card-content">
+              <h3>Then, generate a pairing file</h3>
+              <p>StikDebug requires a pairing file to function properly. Download Jitterbug for your platform and follow the instructions below:</p>
+              
+              <div class="download-platforms">
+                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip" class="platform-link">
+                  <span class="platform-icon windows"></span>
+                  <span>Windows</span>
+                </a>
+                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip" class="platform-link">
+                  <span class="platform-icon macos"></span>
+                  <span>macOS</span>
+                </a>
+                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip" class="platform-link">
+                  <span class="platform-icon linux"></span>
+                  <span>Linux</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="instructions-separator"></div>
+        
+        <div class="platform-section">
+          <h3>For Windows</h3>
+          <ol>
+            <li><strong>Extract</strong> <code>Jitterbugpair-win64.zip</code>.</li>
+            <li><strong>Set a passcode</strong> for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."</li>
+            <li>Open your device to the homescreen.</li>
+            <li>In File Explorer, locate <code>jitterbugpair.exe</code> and run it by double-clicking or right-clicking and selecting "Open".</li>
+            <li>JitterbugPair will generate a <strong>pairing file</strong> in the same folder. This file will have the extension <code>.mobiledevicepairing</code>.</li>
+            <li><strong>Transfer the pairing file</strong> to your iOS device using One/iCloud/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.</li>
+          </ol>
+        </div>
+
+        <div class="instructions-separator"></div>
+
+        <div class="platform-section">
+          <h3>For macOS</h3>
+          <ol>
+            <li><strong>Extract</strong> <code>Jitterbugpair-macos.zip</code>.</li>
+            <li><strong>Set a passcode</strong> for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."</li>
+            <li>Open your device to the homescreen.</li>
+            <li>Find the extracted <code>jitterbugpair</code> file (it should have a black and green icon).</li>
+            <li>Open Terminal (in Launchpad, it's in the "Utilities" folder).</li>
+            <li>Drag the <code>jitterbugpair</code> file into Terminal and press "Return" or Enter.</li>
+            <li>If you get "macOS cannot verify that this app is free from malware":
+              <ul>
+                <li>Go to System Settings > Privacy & Security</li>
+                <li>Scroll down to the message about the app</li>
+                <li>Click "Open Anyway"</li>
+                <li>Try running the program again</li>
+              </ul>
+            </li>
+            <li>JitterBugPair will generate a <strong>pairing file</strong> with the extension <code>.mobiledevicepairing</code>.</li>
+            <li>If you can't find the pairing file:
+              <ul>
+                <li>Copy the name of the pairing file generated</li>
+                <li>Paste it into Finder</li>
+                <li>If you ran the program more than once all pairing files for your device should appear since they share the same name</li>
+              </ul>
+            </li>
+            <li><strong>Transfer the pairing file</strong> to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.</li>
+          </ol>
+        </div>
+
+        <div class="instructions-separator"></div>
+
+        <div class="platform-section">
+          <h3>For Linux</h3>
+          <ol>
+            <li><strong>Extract</strong> <code>Jitterbugpair-linux.zip</code>.</li>
+            <li>Open a terminal in the extracted directory.</li>
+            <li>Make the program executable:
+              <pre>chmod +x ./jitterbugpair</pre>
+            </li>
+            <li><strong>Set a passcode</strong> for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."</li>
+            <li>Open your device to the homescreen.</li>
+            <li>Execute the program:
+              <pre>./jitterbugpair</pre>
+            </li>
+            <li>JitterBugPair will generate a <strong>pairing file</strong> with the extension <code>.mobiledevicepairing</code>.</li>
+            <li><strong>Transfer the pairing file</strong> to your iOS device using your preferred method. For best results, compress the file into a .zip folder first.</li>
+          </ol>
+        </div>
+
+        <div class="tip-box simple-tip">
+          <p><strong>Tip:</strong> When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. StikDebug only accepts <code>.mobiledevicepairing</code> or <code>.plist</code> files.</p>
+        </div>
+
+        <div class="instructions-separator"></div>
+
+        <div class="platform-section">
+          <h3>On your iOS device</h3>
+          <ol>
+            <li>In the <strong>Files app</strong>, long-press your zipped pairing file and select <strong>Uncompress</strong>.</li>
+            <li>Launch the <strong>StikDebug</strong> app.
+              <ul>
+                <li>If the app doesn't appear, restart your device.</li>
+              </ul>
+            </li>
+            <li>Upon launching the app, tap <strong>Import Pairing File</strong>, then navigate to and select your <strong>unzipped pairing file</strong>.</li>
+            <li>StikDebug is now ready for use.</li>
+          </ol>
+        </div>
+        
+        <div class="instructions-separator"></div>
+        
+        <p>Having issues? Check out our <a href="faq.html#troubleshooting">Troubleshooting guide</a> in the FAQ section.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StikDebug. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast-notification" id="toast">Source URL copied!</div>
+
+  <script src="../script.js"></script>
+  <script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html> 

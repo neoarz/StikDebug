@@ -4,391 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StikDebug</title>
-  <style>
-    :root {
-      --bg-color: #101218;
-      --header-footer-bg: #161a24;
-      --text-color: #e6e9f0;
-      --accent-color: #3b82f6;
-      --border-color: #2d3748;
-      --card-bg: #1e2433;
-      --hover-color: #4c6ef5;
-      --code-bg: #131722;
-      --summary-color: #63b3ed;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.7;
-      padding-bottom: 4rem;
-    }
-
-    header, footer {
-      background-color: var(--header-footer-bg);
-      padding: 1.2rem 2rem;
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent-color), #60a5fa);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-color);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 1.05rem;
-    }
-
-    nav ul li a:hover {
-      background-color: rgba(59, 130, 246, 0.1);
-      color: var(--accent-color);
-    }
-
-    main {
-      max-width: 950px;
-      margin: 2.5rem auto;
-      padding: 1rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-      border-radius: 16px;
-      background-color: var(--card-bg);
-      padding: 1.75rem;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-      transition: transform 0.3s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    section:hover {
-      transform: translateY(-4px);
-    }
-
-    details {
-      margin-bottom: 1.25rem;
-    }
-
-    summary {
-      font-size: 1.4rem;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0.75rem 0;
-      color: var(--summary-color);
-      outline: none;
-      border-bottom: 2px solid var(--accent-color);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-    }
-
-    summary:hover {
-      color: var(--accent-color);
-    }
-
-    summary::marker, summary::-webkit-details-marker {
-      color: var(--accent-color);
-    }
-
-    details[open] > summary {
-      margin-bottom: 1.25rem;
-    }
-
-    details details > summary {
-      font-size: 1.2rem;
-      border: none;
-      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-    }
-
-    p, li {
-      font-size: 1.05rem;
-      color: #d1d5db;
-    }
-
-    ul, ol {
-      padding-left: 1.75rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    strong {
-      color: var(--text-color);
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: var(--hover-color);
-      text-decoration: underline;
-    }
-
-    a.button {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--accent-color), #4c6ef5);
-      color: #fff;
-      padding: 0.6rem 1.4rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 1rem;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    }
-
-    a.button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-      text-decoration: none;
-    }
-
-    pre {
-      background-color: var(--code-bg);
-      padding: 1.25rem;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      border: 1px solid var(--border-color);
-      color: #a5b4fc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 2rem;
-      background-color: var(--header-footer-bg);
-      border-top: 1px solid var(--border-color);
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      justify-content: center;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg-color);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #3d4a67;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4c5d7d;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-      }
-
-      nav {
-        margin-top: 1rem;
-      }
-
-      header h1 {
-        margin-bottom: 0.5rem;
-      }
-
-      section {
-        padding: 1.25rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>StikDebug</h1>
-    <nav>
-      <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#instructions">Instructions</a></li>
-      </ul>
-    </nav>
+  <!-- Glass Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo">
+        <img src="assets/icon.png" alt="StikDebug Logo">
+      </div>
+    </div>
+    
+    <div class="navbar-divider hide-on-mobile"></div>
+    
+    <div class="navbar-center hide-on-mobile">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="routes/features.html">Features</a>
+        <a href="routes/download.html">Download</a>
+        <a href="routes/developers.html">Developers</a>
+        <a href="routes/faq.html">FAQ</a>
+      </nav>
+    </div>
+    
+    <div class="navbar-right">
+      <a href="https://discord.gg/ZnNcrRT3M8" class="discord-button" target="_blank">
+        <img src="assets/discord-icon.svg" alt="Discord">
+        Join Discord
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="menu-icon"></span>
+      </button>
+    </div>
   </header>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="routes/features.html">Features</a>
+      <a href="routes/download.html">Download</a>
+      <a href="routes/developers.html">Developers</a>
+      <a href="routes/faq.html">FAQ</a>
+    </nav>
+  </div>
+
   <main>
-    <!-- Overview Section -->
-    <section id="overview">
-      <details open>
-        <summary>Project Overview</summary>
-        <p>
-          StikDebug is a work-in-progress on-device debugger for iOS versions 17.4+ (excluding iOS 18.4 beta 1), powered by idevice.
+    <!-- Hero Section with iPhone Display -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1>StikDebug</h1>
+        <p class="hero-tagline">An on-device debugger for iOS 17.4+</p>
+        <p class="hero-description">
+          Powerful debugging tools directly on your iOS device.
+          Analyze, debug, and optimize your apps without a computer.
+          Experience real-time monitoring and advanced debugging capabilities
+          right in the palm of your hand.
         </p>
-      </details>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features">
-      <details>
-        <summary>Features</summary>
-        <ul>
-          <li>Seamless installation via AltStore PAL</li>
-          <li>Modern, dark mode user interface</li>
-          <li>Robust pairing and debugging features</li>
-          <li>Detailed log viewing with Open Console</li>
-          <li>Integrated support for shortcuts and automated actions</li>
-        </ul>
-      </details>
-    </section>
-
-    <!-- Instructions Section -->
-    <section id="instructions">
-      <details>
-        <summary>Instructions</summary>
-
-        <details>
-          <summary>How to Install StikDebug (with AltStore PAL)</summary>
-          <ol>
-            <li>Get AltStore PAL installed from <a href="https://altstore.io" target="_blank">altstore.io</a>.</li>
-            <li>Add the StikDebug source: <a href="altstore://source?url=https://stikdebug.xyz/apps.json" target="_blank">Add</a></li>
-            <li>Install via AltStore PAL – you're done!</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>Pairing File Instructions</summary>
-          <ol>
-            <li>Create a pairing file using the <a href="https://docs.sidestore.io/docs/getting-started/pairing-file/" target="_blank">SideStore guide</a>.</li>
-            <li>Zip and send it to your device via AirDrop, email, or Proton Drive.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>How to Use StikDebug</summary>
-          <ol>
-            <li>Open the app and click "Continue" to enable the loopback VPN.</li>
-            <li>Tap "Connect" and select an app to debug.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>How to View the Logs</summary>
-          <p>Tap the <strong>Open Console</strong> button.</p>
-        </details>
-
-        <details>
-          <summary>Common Issues</summary>
-          <ol>
-            <li><strong>Pairing File Issue -9</strong><br>Fix by recreating the file with JitterBugPair.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>FAQ</summary>
-          <ul>
-            <li><strong>Do I need WiFi?</strong><br>Yes – WiFi or Airplane Mode is required.</li>
-            <li><strong>Is it open source?</strong><br>Yes – view on <a href="https://github.com/0-Blu/StikJIT/">GitHub</a>.</li>
-            <li><strong>Supported iOS?</strong><br>iOS 17.4 and up.</li>
-            <li><strong>Older iOS?</strong><br>No, update required.</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>iDevice Error Codes</summary>
-          <pre>
-Socket (-1)
-Ssl (-2)
-SslSetup (-3)
-Plist (-4)
-Utf8 (-5)
-UnexpectedResponse (-6)
-GetProhibited (-7)
-SessionInactive (-8)
-InvalidHostID (-9)
-NoEstablishedConnection (-10)
-HeartbeatSleepyTime (-11)
-HeartbeatTimeout (-12)
-NotFound (-13)
-CdtunnelPacketTooShort (-14)
-CdtunnelPacketInvalidMagic (-15)
-PacketSizeMismatch (-16)
-Json (-17)
-DeviceNotFound (-18)
-DeviceLocked (-19)
-UsbConnectionRefused (-20)
-UsbBadCommand (-21)
-UsbBadDevice (-22)
-UsbBadVersion (-23)
-BadBuildManifest (-24)
-ImageNotMounted (-25)
-Reqwest (-26)
-InternalError (-27)
-Xpc (-28)
-NsKeyedArchiveError (-29)
-UnknownAuxValueType (-30)
-UnknownChannel (-31)
-AddrParseError (-32)
-DisableMemoryLimitFailed (-33)
-NotEnoughBytes (-34)
-Utf8Error (-35)
-InvalidArgument (-36)
-UnknownErrorType (-37)
-
-FFI-Specific Bindings:
-AdapterIOFailed (-996)
-ServiceNotFound (-997)
-BufferTooSmall (-998)
-InvalidString (-999)
-InvalidArg (-1000)
-          </pre>
-        </details>
-      </details>
+        <div class="hero-buttons">
+          <a href="routes/download.html" class="button primary-button">Download Now</a>
+          <a href="routes/features.html" class="button secondary-button">View Features</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="iphone-frame">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="assets/iphone_1.png" alt="StikDebug App Screenshot 1" class="iphone-screenshot">
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/iphone_2.png" alt="StikDebug App Screenshot 2" class="iphone-screenshot">
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/iphone_3.png" alt="StikDebug App Screenshot 3" class="iphone-screenshot">
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/iphone_4.png" alt="StikDebug App Screenshot 4" class="iphone-screenshot">
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/iphone_5.png" alt="StikDebug App Screenshot 5" class="iphone-screenshot">
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/iphone_6.png" alt="StikDebug App Screenshot 6" class="iphone-screenshot">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 StikDebug. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
