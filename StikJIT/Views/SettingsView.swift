@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage("selectedAppIcon") private var selectedAppIcon: String = "AppIcon"
     @AppStorage("autoQuitAfterEnablingJIT") private var doAutoQuitAfterEnablingJIT = false
     @AppStorage("skipGetTaskAllowCheck") private var doSkipGetTaskAllowCheck = false
+    @AppStorage("useGradientBackground") private var useGradientBackground = false
     @State private var isShowingPairingFilePicker = false
     @Environment(\.colorScheme) private var colorScheme
 
@@ -39,7 +40,7 @@ struct SettingsView: View {
 
     // Developer profile image URLs 
     private let developerProfiles: [String: String] = [
-        "Stephen": "https://github.com/0-Blu.png",
+        "Stephen": "https://github.com/StephenDev0.png",
         "jkcoxson": "https://github.com/jkcoxson.png",
         "Stossy11": "https://github.com/Stossy11.png",
         "Neo": "https://github.com/neoarz.png",
@@ -58,8 +59,21 @@ struct SettingsView: View {
 
     var body: some View {
         ZStack {
-            Color(UIColor.systemBackground)
+            // Background - either gradient or solid color based on preference
+            if useGradientBackground {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        colorScheme == .dark ? Color.black : Color(hex: "#F2F4F6") ?? .white,
+                        colorScheme == .dark ? Color(hex: "#212529") ?? .black : Color.white
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
                 .ignoresSafeArea()
+            } else {
+                Color(UIColor.systemBackground)
+                    .ignoresSafeArea()
+            }
 
             ScrollView {
                 VStack(spacing: 12) {
@@ -321,7 +335,7 @@ struct SettingsView: View {
                                     .background(Color(UIColor.tertiarySystemBackground))
                                     .cornerRadius(12)
                                     .onTapGesture {
-                                        if let url = URL(string: "https://github.com/0-Blu") {
+                                        if let url = URL(string: "https://github.com/StephenDev0") {
                                             UIApplication.shared.open(url)
                                         }
                                     }
@@ -484,6 +498,7 @@ struct SettingsView: View {
                         Text("Version \(appVersion) • iOS \(UIDevice.current.systemVersion)")
                             .font(.footnote)
                             .foregroundColor(.secondary.opacity(0.8))
+                            .padding(.bottom, 45)
                         
                         Spacer()
                     }
@@ -491,7 +506,8 @@ struct SettingsView: View {
                     .padding(.bottom, 16)
                 }
                 .padding(.horizontal, 16)
-                .padding(.vertical, 20)
+                .padding(.vertical, 16)
+                .padding(.bottom, 20)
             }
         }
         .fileImporter(

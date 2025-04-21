@@ -19,6 +19,7 @@ struct HomeView: View {
     @AppStorage("username") private var username = "User"
     @AppStorage("customAccentColor") private var customAccentColorHex: String = ""
     @AppStorage("autoQuitAfterEnablingJIT") private var doAutoQuitAfterEnablingJIT = false
+    @AppStorage("useGradientBackground") private var useGradientBackground = false
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accentColor) private var environmentAccentColor
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -45,9 +46,22 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            // Use system background
-            Color(colorScheme == .dark ? .black : .white)
-            .edgesIgnoringSafeArea(.all)
+            // Background - either gradient or solid color based on preference
+            if useGradientBackground {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        colorScheme == .dark ? Color.black : Color(hex: "#F2F4F6") ?? .white,
+                        colorScheme == .dark ? Color(hex: "#212529") ?? .black : Color.white
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .edgesIgnoringSafeArea(.all)
+            } else {
+                // Use system background
+                Color(colorScheme == .dark ? .black : .white)
+                .edgesIgnoringSafeArea(.all)
+            }
             
             VStack(spacing: 25) {
                 Spacer()
@@ -61,7 +75,7 @@ struct HomeView: View {
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                 }
-                .padding(.top, 40)
+                .padding(.top, 30) // Reduced top padding
                 
                 // Main action button - changes based on whether we have a pairing file
                 Button(action: {
@@ -98,6 +112,7 @@ struct HomeView: View {
                     .shadow(color: accentColor.opacity(0.3), radius: 8, x: 0, y: 4)
                 }
                 .padding(.horizontal, 20)
+                .padding(.bottom, 20) // Added padding to move content up
                 
                 // Status message area - keeps layout consistent
                 ZStack {

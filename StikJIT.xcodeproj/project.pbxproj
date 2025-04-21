@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		215A5D7D2DB595E5003AF275 /* SwiftGlass in Frameworks */ = {isa = PBXBuildFile; productRef = 215A5D7C2DB595E5003AF275 /* SwiftGlass */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DC6F1D492D94EADF0071B2B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215A5D7D2DB595E5003AF275 /* SwiftGlass in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +140,7 @@
 			);
 			name = StikJIT;
 			packageProductDependencies = (
+				215A5D7C2DB595E5003AF275 /* SwiftGlass */,
 			);
 			productName = StikJIT;
 			productReference = DC6F1D372D94EADD0071B2B6 /* StikJIT.app */;
@@ -219,6 +225,9 @@
 			);
 			mainGroup = DC6F1D2E2D94EADD0071B2B6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				21EAC6392DB59485006018C9 /* XCRemoteSwiftPackageReference "SwiftGlass" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC6F1D382D94EADD0071B2B6 /* Products */;
 			projectDirPath = "";
@@ -414,10 +423,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = StikJIT/StikJIT.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StikJIT/Preview Content\"";
-				DEVELOPMENT_TEAM = SZ977XLF24;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5W322N3S53;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -442,8 +452,10 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stik.sj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stikjit.neosign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StikJIT;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -462,10 +474,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = StikJIT/StikJIT.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StikJIT/Preview Content\"";
-				DEVELOPMENT_TEAM = SZ977XLF24;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5W322N3S53;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -490,8 +503,10 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stik.sj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stikjit.neosign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StikJIT;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -632,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21EAC6392DB59485006018C9 /* XCRemoteSwiftPackageReference "SwiftGlass" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neoarz/SwiftGlass.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		215A5D7C2DB595E5003AF275 /* SwiftGlass */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21EAC6392DB59485006018C9 /* XCRemoteSwiftPackageReference "SwiftGlass" */;
+			productName = SwiftGlass;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC6F1D2F2D94EADD0071B2B6 /* Project object */;
 }

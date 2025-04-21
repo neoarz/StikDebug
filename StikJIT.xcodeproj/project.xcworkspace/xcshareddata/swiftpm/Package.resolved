@@ -1,0 +1,15 @@
+{
+  "originHash" : "0a3b66619d175866ac88b0d70707cf5aa159e090e305f99119ccc6b7754a482e",
+  "pins" : [
+    {
+      "identity" : "swiftglass",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/neoarz/SwiftGlass.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1ea395fb9e35e825d01e2130692f8016cb1ef2f9"
+      }
+    }
+  ],
+  "version" : 3
+}

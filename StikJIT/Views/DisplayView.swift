@@ -64,6 +64,8 @@ struct DisplayView: View {
     @AppStorage("customAccentColor") private var customAccentColorHex: String = ""
     @AppStorage("appTheme") private var appTheme: String = "system"
     @AppStorage("loadAppIconsOnJIT") private var loadAppIconsOnJIT = true
+    @AppStorage("useGlassTabBar") private var useGlassTabBar = false
+    @AppStorage("useGradientBackground") private var useGradientBackground = false
     @State private var selectedAccentColor: Color = .blue
     @Environment(\.colorScheme) private var colorScheme
     
@@ -77,8 +79,21 @@ struct DisplayView: View {
     
     var body: some View {
         ZStack {
-            Color(colorScheme == .dark ? .black : UIColor.systemBackground)
+            // Background - either gradient or solid color based on preference
+            if useGradientBackground {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        colorScheme == .dark ? Color.black : Color(hex: "#F2F4F6") ?? .white,
+                        colorScheme == .dark ? Color(hex: "#212529") ?? .black : Color.white
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
                 .ignoresSafeArea()
+            } else {
+                Color(colorScheme == .dark ? .black : UIColor.systemBackground)
+                    .ignoresSafeArea()
+            }
                 
             ScrollView {
                 VStack(spacing: 16) {
@@ -185,6 +200,42 @@ struct DisplayView: View {
                             Text("Disabling this will hide app icons in the app list and may improve performance, while also giving it a more minimalistic look.")
                                 .font(.footnote)
                                 .foregroundColor(Color(UIColor.secondaryLabel))
+                        }
+                    }
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 16)
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(16)
+                    
+                    // UI Options Section
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("UI Options")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                        
+                        VStack(alignment: .leading, spacing: 14) {
+                            // Glass tab bar toggle
+                            VStack(alignment: .leading, spacing: 6) {
+                                Toggle("Use Glass Tab Bar", isOn: $useGlassTabBar)
+                                    .foregroundColor(.primary)
+                                    .tint(.green)
+                                
+                                Text("Enables the modern glass effect tab bar instead of using the standard system tab bar. Requires app restart to take effect.")
+                                    .font(.footnote)
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
+                            
+                            // Gradient background toggle
+                            VStack(alignment: .leading, spacing: 6) {
+                                Toggle("Use Gradient Background", isOn: $useGradientBackground)
+                                    .foregroundColor(.primary)
+                                    .tint(.green)
+                                
+                                Text("Enables a subtle gradient background instead of a solid color for a more modern look.")
+                                    .font(.footnote)
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
                         }
                     }
                     .padding(.vertical, 16)
