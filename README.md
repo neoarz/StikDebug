@@ -45,9 +45,3 @@
 ## License  
 StikDebug is licensed under **AGPL-3.0**. See [`LICENSE`](LICENSE) for details.  
 
-
-
-
-
-## License  
-StikDebug is licensed under **AGPL-3.0**. See [`LICENSE`](LICENSE) for details.  
